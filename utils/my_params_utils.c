@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sat Mar 11 00:00:17 2017 Antonin Rapini
-** Last update Sat Mar 11 16:36:08 2017 Antonin Rapini
+** Last update Sat Mar 11 16:45:35 2017 Antonin Rapini
 */
 
 #include "my_game.h"
@@ -17,7 +17,7 @@ int	my_setlevel(char *arg, t_game *game)
 
   level = 0;
   level = my_getnbr(arg);
-  if (arg > 0)
+  if (*arg > 0)
     {
       game->startlevel = level;
       return (0);
@@ -34,7 +34,7 @@ int	my_setmapsize(char *arg, t_game *game)
   rows = my_getnbr(arg);
   if (rows != 0)
     {
-      arg += my_nbrlen(arg);
+      arg += my_nbrlen(rows);
       if (*arg == ',')
 	{
 	  arg++;

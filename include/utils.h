@@ -5,13 +5,14 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Feb 22 16:35:58 2017 Antonin Rapini
-** Last update Sat Mar 11 16:36:39 2017 Antonin Rapini
+** Last update Sat Mar 11 16:51:54 2017 Antonin Rapini
 */
 
 #ifndef UTILS_H_
 # define UTILS_H_
 
 #include "my_tetriminos.h"
+#include "my_game.h"
 
 void my_putchar(char);
 int my_getnbr(char *);
@@ -30,5 +31,7 @@ char *my_getterm(char **);
 int my_strncmp(char *, char *, int);
 int my_setlevel(char *, t_game *);
 int my_setmapsize(char *, t_game *);
+int my_nbrlen(int);
+void my_print_help();
 
 #endif /* !UTILS_H_ */

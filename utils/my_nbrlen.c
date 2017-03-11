@@ -5,10 +5,10 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sun Nov 20 15:54:52 2016 Antonin Rapini
-** Last update Thu Dec  1 13:34:50 2016 Antonin Rapini
+** Last update Wed Mar  8 22:28:23 2017 Antonin Rapini
 */
 
-int	my_nbrlen(float nbr)
+int	my_nbrlen(int nbr)
 {
   float	div;
   int	negative;

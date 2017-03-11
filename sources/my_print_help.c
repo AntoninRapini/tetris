@@ -5,8 +5,10 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 22:30:00 2017 Antonin Rapini
-** Last update Fri Mar 10 22:40:37 2017 Antonin Rapini
+** Last update Sat Mar 11 16:46:25 2017 Antonin Rapini
 */
+
+#include "utils.h"
 
 void my_print_help()
 {

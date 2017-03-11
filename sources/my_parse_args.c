@@ -5,9 +5,10 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 19:02:17 2017 Antonin Rapini
-** Last update Sat Mar 11 16:33:06 2017 Antonin Rapini
+** Last update Sat Mar 11 16:51:18 2017 Antonin Rapini
 */
 
+#include <stdlib.h>
 #include "my_game.h"
 #include "utils.h"
 
@@ -18,7 +19,7 @@ int my_parse_option(char *arg, t_game *game)
   else if (my_strcmp("-d", arg) == 0 || my_strcmp("--debug", arg) == 0)
     game->debug = 1;
   else if (my_strncmp("--map-size=", arg, 11) == 0)
-    return (my_setmapsize(game, arg + 11));
+    return (my_setmapsize(arg + 11, game));
   else
     return (1);
   return (0);
@@ -29,7 +30,7 @@ int	my_parse_input(int *i, int ac, char **av, t_game *game)
   int	j;
 
   j = 0;
-  while (game->inputs[j])
+  while (game->inputs[j].arg != NULL)
     {
       if (my_strcmp(game->inputs[j].arg, av[*i]))
 	{
@@ -47,11 +48,16 @@ int	my_parse_input(int *i, int ac, char **av, t_game *game)
 	{
 	  if (my_strlen(av[*i]) > my_strlen(game->inputs[j].longarg))
 	    {
-	      game->inputs[j].input = my_strdup(av[*i] + game->inputs[j].longarg);
+	      game->inputs[j].input = my_strdup(av[*i] +
+						my_strlen(game->inputs[j].longarg));
+	      return (0);
 	    }
+	  else
+	    return (1);
 	}
       j++;
     }
+  return (0);
 }
 
 int	my_parse_args(int ac, char **av, t_game *game)
