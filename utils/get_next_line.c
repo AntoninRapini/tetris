@@ -5,13 +5,25 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Mon Jan  2 18:01:21 2017 Antonin Rapini
-** Last update Thu Feb  2 19:07:34 2017 Antonin Rapini
+** Last update Sun Mar 12 19:48:36 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "get_next_line.h"
 
+
+void	my_clear_buffer(char *buffer)
+{
+  int	i;
+
+  i = 0;
+  while (i < READ_SIZE)
+    {
+      buffer[i] = '\0';
+      i++;
+    }
+}
 void	my_changebuffer(char *buffer, int size)
 {
   char	tmpbuffer[READ_SIZE];
@@ -78,9 +90,13 @@ int	my_fillstr(char *buffer, char **str)
 char		*get_next_line(const int fd)
 {
   static char	buffer[READ_SIZE + 1] = "";
+  static int	prevfd = -1;
   int		size;
   char		*str;
 
+  if (fd != prevfd)
+    my_clear_buffer(buffer);
+  prevfd = fd;
   size = 1;
   str = NULL;
   while (READ_SIZE > 0 && size > 0)

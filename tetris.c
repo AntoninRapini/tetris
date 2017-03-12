@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Thu Mar  2 18:33:06 2017 Antonin Rapini
-** Last update Sat Mar 11 18:48:06 2017 Antonin Rapini
+** Last update Sun Mar 12 18:31:48 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -24,9 +24,6 @@ int		main(int ac, char **av, char **env)
   int		i;
 
   i = 1;
-  if (game)
-    {
-    }
   while (i++ < ac)
     if (my_strcmp(av[i - 1], "--help") == 0)
       {
@@ -39,5 +36,7 @@ int		main(int ac, char **av, char **env)
     return (84);
   if ((game = my_create_game(ac, av)) == NULL)
     return (84);
+  if (game->debug)
+    my_print_debug(game);
   return (0);
 }

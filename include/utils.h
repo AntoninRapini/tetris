@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Feb 22 16:35:58 2017 Antonin Rapini
-** Last update Sat Mar 11 18:41:30 2017 Antonin Rapini
+** Last update Sun Mar 12 20:27:01 2017 Antonin Rapini
 */
 
 #ifndef UTILS_H_
@@ -34,5 +34,8 @@ int my_setmapsize(char *, t_game *);
 int my_nbrlen(int);
 void my_print_help();
 int my_miniprintf(char *, ...);
+char *my_nstrcat(int, ...);
+void my_free_wordtab(char **);
+char **my_init_wordtab(int);
 
 #endif /* !UTILS_H_ */

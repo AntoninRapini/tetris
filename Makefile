@@ -5,7 +5,7 @@
 ## Login   <antonin.rapini@epitech.net>
 ## 
 ## Started on  Wed Feb  1 18:39:58 2017 Antonin Rapini
-## Last update Sat Mar 11 18:39:33 2017 Antonin Rapini
+## Last update Sun Mar 12 20:47:37 2017 Antonin Rapini
 ##
 
 CFLAGS	+= -Wall -Werror -Wextra
@@ -14,14 +14,14 @@ CFLAGS	+= -I include
 SRC	=	utils/my_getnbr.c	\
 		utils/get_next_line.c	\
 		utils/my_putstr.c	\
-		utils/my_show_wordtab.c	\
-		utils/my_wordtablen.c	\
 		utils/my_put_nbr.c	\
+		utils/my_wordtab_utils.c	\
 		utils/my_strcmp.c	\
 		utils/my_strncmp.c	\
 		utils/my_str_to_wordtab.c	\
 		utils/my_strndup.c	\
 		utils/my_strncpy.c	\
+		utils/my_nstrcat.c	\
 		utils/my_strlen.c	\
 		utils/my_putchar.c	\
 		utils/my_nbrlen.c	\
@@ -30,14 +30,15 @@ SRC	=	utils/my_getnbr.c	\
 		utils/my_getterm.c	\
 		utils/my_params_utils.c	\
 		utils/my_miniprintf.c	\
+		utils/my_tetriminos_utils.c	\
 		sources/my_set_inputs.c	\
-		sources/my_free_tetriminos.c	\
-		sources/my_show_tetrimino.c	\
-		sources/my_create_tetriminoslist.c	\
-		sources/my_check_tetrimino.c	\
-		sources/my_create_game.c	\
+		sources/my_show_tetriminoslist.c	\
+		sources/init/my_create_tetriminoslist.c	\
+		sources/init/my_get_tetriminos.c	\
+		sources/init/my_create_game.c	\
+		sources/init/my_parse_args.c		\
 		sources/my_print_help.c		\
-		sources/my_parse_args.c		\
+		sources/my_print_debug.c	\
 		tetris.c
 
 OBJ	= 	$(SRC:.c=.o)
