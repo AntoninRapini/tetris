@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 22:30:00 2017 Antonin Rapini
-** Last update Sat Mar 11 16:56:10 2017 Antonin Rapini
+** Last update Sun Mar 12 23:13:11 2017 Antonin Rapini
 */
 
 #include "utils.h"
@@ -23,7 +23,7 @@ void my_print_help()
   my_putstr("\t-kt --key-turn={K}");
   my_putstr
     ("\tTURN the tetrimino clockwise 90d using the K key (def: top arrow)\n");
-  my_putstr("\t-kd --key-quit={K}");
+  my_putstr("\t-kd --key-drop={K}");
   my_putstr("\tDROP the tetrimino using the K key (def: down arrow)\n");
   my_putstr("\t-kq --key-quit={K}");
   my_putstr("\tQUIT the game using the K key (def: 'q' key\n");

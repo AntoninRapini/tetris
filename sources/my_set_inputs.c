@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar  3 16:35:16 2017 Antonin Rapini
-** Last update Sun Mar 12 19:18:55 2017 Antonin Rapini
+** Last update Sun Mar 12 23:13:56 2017 Antonin Rapini
 */
 
 #include <curses.h>
@@ -27,10 +27,10 @@ t_input		*my_set_inputs()
   inputs[INPUT_RIGHT].input = tigetstr("kcuf1");
   inputs[INPUT_TURN].arg = my_strdup("-kt");
   inputs[INPUT_TURN].longarg = my_strdup("--key-turn");
-  inputs[INPUT_TURN].input = my_strdup(" ");
+  inputs[INPUT_TURN].input = tigetstr("kcud1");
   inputs[INPUT_DROP].arg = my_strdup("-kd");
   inputs[INPUT_DROP].longarg = my_strdup("--key-drop");
-  inputs[INPUT_DROP].input = my_strdup("x");
+  inputs[INPUT_DROP].input = tigetstr("kcuu1");
   inputs[INPUT_QUIT].arg = my_strdup("-kq");
   inputs[INPUT_QUIT].longarg = my_strdup("--key-quit");
   inputs[INPUT_QUIT].input = my_strdup("q");
