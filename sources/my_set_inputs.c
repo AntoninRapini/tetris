@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar  3 16:35:16 2017 Antonin Rapini
-** Last update Sun Mar 12 23:13:56 2017 Antonin Rapini
+** Last update Mon Mar 13 06:02:36 2017 Antonin Rapini
 */
 
 #include <curses.h>
@@ -17,25 +17,25 @@ t_input		*my_set_inputs()
 {
   t_input	*inputs;
 
-  if ((inputs = malloc(sizeof(t_input *) * 7)) == NULL)
+  if ((inputs = malloc(sizeof(t_input) * 7)) == NULL)
     return (NULL);
   inputs[INPUT_LEFT].arg = my_strdup("-kl");
-  inputs[INPUT_LEFT].longarg = my_strdup("--key-left");
+  inputs[INPUT_LEFT].longarg = my_strdup("--key-left=");
   inputs[INPUT_LEFT].input = tigetstr("kcub1");
   inputs[INPUT_RIGHT].arg = my_strdup("-kr");
-  inputs[INPUT_RIGHT].longarg = my_strdup("--key-right");
+  inputs[INPUT_RIGHT].longarg = my_strdup("--key-right=");
   inputs[INPUT_RIGHT].input = tigetstr("kcuf1");
   inputs[INPUT_TURN].arg = my_strdup("-kt");
-  inputs[INPUT_TURN].longarg = my_strdup("--key-turn");
+  inputs[INPUT_TURN].longarg = my_strdup("--key-turn=");
   inputs[INPUT_TURN].input = tigetstr("kcud1");
   inputs[INPUT_DROP].arg = my_strdup("-kd");
-  inputs[INPUT_DROP].longarg = my_strdup("--key-drop");
+  inputs[INPUT_DROP].longarg = my_strdup("--key-drop=");
   inputs[INPUT_DROP].input = tigetstr("kcuu1");
   inputs[INPUT_QUIT].arg = my_strdup("-kq");
-  inputs[INPUT_QUIT].longarg = my_strdup("--key-quit");
+  inputs[INPUT_QUIT].longarg = my_strdup("--key-quit=");
   inputs[INPUT_QUIT].input = my_strdup("q");
   inputs[INPUT_PAUSE].arg = my_strdup("-kp");
-  inputs[INPUT_PAUSE].longarg = my_strdup("--key-pause");
+  inputs[INPUT_PAUSE].longarg = my_strdup("--key-pause=");
   inputs[INPUT_PAUSE].input = my_strdup("p");
   inputs[6].arg = NULL;
   inputs[6].longarg = NULL;
