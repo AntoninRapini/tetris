@@ -5,15 +5,14 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar  3 00:11:58 2017 Antonin Rapini
-** Last update Sun Mar 12 21:44:36 2017 Antonin Rapini
+** Last update Thu Mar 16 18:52:01 2017 Antonin Rapini
 */
 
 #include "sources.h"
 #include "my_tetriminos.h"
 #include "my_game.h"
 #include <stdlib.h>
-
-#include <stdio.h>
+#include "utils.h"
 
 int my_set_default(t_game *game)
 {
@@ -37,6 +36,8 @@ t_game		*my_create_game(int ac, char **av)
   if (my_set_default(game))
     return (NULL);
   if (my_parse_args(ac, av, game))
+    return (NULL);
+  if (my_check_inputsequences(game->inputs))
     return (NULL);
   if ((game->tetriminoslist = my_create_tetriminoslist(game)) == NULL)
     return (NULL);

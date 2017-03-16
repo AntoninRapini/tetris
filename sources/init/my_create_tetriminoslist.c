@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Thu Mar  2 18:59:05 2017 Antonin Rapini
-** Last update Thu Mar 16 17:55:37 2017 Antonin Rapini
+** Last update Thu Mar 16 18:37:15 2017 Antonin Rapini
 */
 
 #include <dirent.h>
@@ -36,7 +36,7 @@ int		my_create_listelement
   while ((buffer = get_next_line(fd)) != NULL)
     free(buffer);
   close(fd);
-  if (my_check_tetriminos(element->tetriminos))
+  if (my_check_tetriminos(element->tetriminos, game))
     return (0);
   game->tetriminoscount++;
   element->next = *tlist;

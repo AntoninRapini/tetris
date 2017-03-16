@@ -5,7 +5,7 @@
 ## Login   <antonin.rapini@epitech.net>
 ## 
 ## Started on  Wed Feb  1 18:39:58 2017 Antonin Rapini
-## Last update Thu Mar 16 18:25:41 2017 Antonin Rapini
+## Last update Thu Mar 16 18:52:32 2017 Antonin Rapini
 ##
 
 CFLAGS	+= -Wall -Werror -Wextra
@@ -28,16 +28,18 @@ SRC	=	utils/my_getnbr.c	\
 		utils/my_sort_list.c	\
 		utils/my_strdup.c	\
 		utils/my_getterm.c	\
+		utils/my_strstr.c	\
 		utils/my_params_utils.c	\
 		utils/my_miniprintf.c	\
 		utils/my_tetriminos_utils.c	\
-		sources/my_set_inputs.c	\
+		sources/init/my_set_inputs.c	\
 		sources/my_show_tetriminoslist.c	\
 		sources/init/my_parse_input.c		\
 		sources/init/my_create_tetriminoslist.c	\
 		sources/init/my_get_tetriminos.c	\
 		sources/init/my_create_game.c	\
 		sources/init/my_parse_args.c		\
+		sources/init/my_check_inputsequences.c	\
 		sources/my_print_help.c		\
 		sources/my_print_debug.c	\
 		tetris.c
