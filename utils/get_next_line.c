@@ -5,13 +5,12 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Mon Jan  2 18:01:21 2017 Antonin Rapini
-** Last update Sun Mar 12 19:48:36 2017 Antonin Rapini
+** Last update Thu Mar 16 17:54:56 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "get_next_line.h"
-
 
 void	my_clear_buffer(char *buffer)
 {

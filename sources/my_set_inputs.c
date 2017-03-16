@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar  3 16:35:16 2017 Antonin Rapini
-** Last update Mon Mar 13 06:02:36 2017 Antonin Rapini
+** Last update Thu Mar 16 17:53:45 2017 Antonin Rapini
 */
 
 #include <curses.h>
@@ -38,7 +38,6 @@ t_input		*my_set_inputs()
   inputs[INPUT_PAUSE].longarg = my_strdup("--key-pause=");
   inputs[INPUT_PAUSE].input = my_strdup("p");
   inputs[6].arg = NULL;
-  inputs[6].longarg = NULL;
   inputs[6].input = NULL;
   return (inputs);
 }

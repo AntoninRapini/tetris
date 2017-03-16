@@ -5,9 +5,8 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar  3 14:45:34 2017 Antonin Rapini
-** Last update Fri Mar 10 19:22:23 2017 Antonin Rapini
+** Last update Thu Mar 16 17:52:49 2017 Antonin Rapini
 */
-
 
 #ifndef MY_INPUTS_H_
 # define MY_INPUTS_H_

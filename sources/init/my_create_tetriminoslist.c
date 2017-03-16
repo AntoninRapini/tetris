@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Thu Mar  2 18:59:05 2017 Antonin Rapini
-** Last update Sun Mar 12 21:27:27 2017 Antonin Rapini
+** Last update Thu Mar 16 17:55:37 2017 Antonin Rapini
 */
 
 #include <dirent.h>
@@ -17,7 +17,6 @@
 #include <fcntl.h>
 #include "unistd.h"
 #include "get_next_line.h"
-#include <stdio.h>
 
 int		my_create_listelement
 (t_tlist **tlist, struct dirent *entry, t_game *game)
@@ -42,8 +41,8 @@ int		my_create_listelement
   game->tetriminoscount++;
   element->next = *tlist;
   *tlist = element;
-  return (0);}
-
+  return (0);
+}
 
 void my_set_previous(t_tlist *tlist)
 {

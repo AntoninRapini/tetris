@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 22:30:00 2017 Antonin Rapini
-** Last update Sun Mar 12 23:13:11 2017 Antonin Rapini
+** Last update Thu Mar 16 17:54:14 2017 Antonin Rapini
 */
 
 #include "utils.h"
@@ -29,8 +29,8 @@ void my_print_help()
   my_putstr("\tQUIT the game using the K key (def: 'q' key\n");
   my_putstr("\t-kp --key-pause={K}");
   my_putstr("\tPAUSE/RESTART the game using the K key (def: space bar\n");
-  my_putstr("\t--map-size={row,col}");
-  my_putstr("\tSet the numbers of rows and columns of the map (def: 20, 10)\n");
+  my_putstr("\t--map-size={row,col}\t");
+  my_putstr("Set the numbers of rows and columns of the map (def: 20, 10)\n");
   my_putstr("\t-w --without-next\tHide next tetrimino (def: false)\n");
   my_putstr("\t-d --debug\t\tDebug mode (def: false)\n");
 }
