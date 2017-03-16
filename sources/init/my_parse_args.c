@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 19:02:17 2017 Antonin Rapini
-** Last update Mon Mar 13 06:37:53 2017 Antonin Rapini
+** Last update Thu Mar 16 17:51:07 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -39,7 +39,7 @@ int my_parse_option(int *i, int ac, char **av, t_game *game)
       return (0);
     }
   else if (my_strncmp("--map-size=", av[*i], 11) == 0)
-    return (my_setmapsize(av[*i] + 11, game));
+      return (my_setmapsize(av[*i] + 11, game));
   return (1);
 }
 
