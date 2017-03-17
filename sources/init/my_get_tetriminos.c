@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sun Mar 12 20:45:32 2017 Antonin Rapini
-** Last update Fri Mar 17 14:33:41 2017 Antonin Rapini
+** Last update Sat Mar 18 00:53:40 2017 Antonin Rapini
 */
 
 #include <fcntl.h>
@@ -128,7 +128,7 @@ t_tetriminos	*my_get_tetriminos(char *file, int fd, t_game *game)
     }
   if (my_fill_tetriminos(fd, ts))
     return (ts);
-  if (my_check_tetriminos(ts, game))
+  if (ts->valid == 1 && my_check_tetriminos(ts, game))
     ts->valid = 0;
   return (ts);
 }
