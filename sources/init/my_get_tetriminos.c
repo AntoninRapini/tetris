@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sun Mar 12 20:45:32 2017 Antonin Rapini
-** Last update Fri Mar 17 01:37:47 2017 Antonin Rapini
+** Last update Fri Mar 17 13:19:41 2017 Antonin Rapini
 */
 
 #include <fcntl.h>
@@ -58,6 +58,27 @@ char	*my_get_tetriminos_name(char *filename)
   return (name);
 }
 
+int	my_checkwidth(char *bfr, int width)
+{
+  int	i;
+
+  i = 0;
+  while (bfr[i])
+    {
+      i++;
+      if (i == width)
+	{
+	  while (bfr[i])
+	    {
+	      if (bfr[i] != ' ')
+		return (1);
+	      i++;
+	    }
+	}
+    }
+  return (0);
+}
+
 int	my_fill_tetriminos(int fd, t_tetriminos *ts)
 {
   int	i;
@@ -66,7 +87,7 @@ int	my_fill_tetriminos(int fd, t_tetriminos *ts)
   i = 0;
   while ((buffer = get_next_line(fd)) != NULL)
     {
-      if (i >= ts->height || my_strlen(buffer) > ts->width)
+      if (i >= ts->height || my_checkwidth(buffer, ts->width))
 	{
 	  free(buffer);
 	  ts->valid = 0;

@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Thu Mar  2 18:33:06 2017 Antonin Rapini
-** Last update Fri Mar 17 01:45:36 2017 Antonin Rapini
+** Last update Fri Mar 17 13:15:25 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -41,5 +41,6 @@ int		main(int ac, char **av, char **env)
       my_print_debug(game);
       my_putstr("Press any key to start Tetris\n");
     }
-  return (my_play(game));
+  return (0);
+  // return (my_play(game));
 }

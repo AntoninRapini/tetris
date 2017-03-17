@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Feb 22 16:35:58 2017 Antonin Rapini
-** Last update Fri Mar 17 01:16:05 2017 Antonin Rapini
+** Last update Fri Mar 17 02:03:19 2017 Antonin Rapini
 */
 
 #ifndef UTILS_H_
@@ -39,5 +39,6 @@ void my_free_wordtab(char **);
 char **my_init_wordtab(int);
 int my_check_inputsequences(t_input *);
 int my_strstr(char *, char *);
+void my_memset(void *, char, int);
 
 #endif /* !UTILS_H_ */
