@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar  3 00:11:58 2017 Antonin Rapini
-** Last update Thu Mar 16 18:52:01 2017 Antonin Rapini
+** Last update Fri Mar 17 01:47:57 2017 Antonin Rapini
 */
 
 #include "sources.h"
@@ -14,8 +14,11 @@
 #include <stdlib.h>
 #include "utils.h"
 
-int my_set_default(t_game *game)
+int	my_set_default(t_game *game)
 {
+  int	i;
+
+  i = 0;
   game->startlevel = 1;
   game->mapsize.x = 20;
   game->mapsize.y = 10;
@@ -24,6 +27,11 @@ int my_set_default(t_game *game)
   game->tetriminoscount = 0;
   if ((game->inputs = my_set_inputs()) == NULL)
     return (1);
+  while (game->inputs[i].arg)
+    {
+      game->inputs[i].changed = 0;
+      i++;
+    }
   return (0);
 }
 

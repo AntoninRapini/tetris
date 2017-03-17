@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 19:02:17 2017 Antonin Rapini
-** Last update Fri Mar 17 01:41:44 2017 Antonin Rapini
+** Last update Fri Mar 17 01:49:08 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -19,9 +19,10 @@ int	my_parse_longarg(int i, char **av, t_input *input)
   longarglen = my_strlen(input->longarg);
   if (my_strncmp(input->longarg, av[i], longarglen) == 0)
     {
-      if (my_strlen(av[i]) > longarglen)
+      if (my_strlen(av[i]) > longarglen && input->changed == 0)
 	{
 	  input->input = my_strdup(av[i] + longarglen);
+	  input->changed = 1;
 	  return (2);
 	}
       return (1);
@@ -33,10 +34,11 @@ int my_parse_inputarg(int *i, int ac, char **av, t_input *input)
 {
   if (my_strcmp(av[*i], input->arg) == 0)
     {
-      if (*i + 1 < ac)
+      if (*i + 1 < ac && input->changed == 0)
 	{
 	  (*i)++;
 	  input->input = av[*i];
+	  input->changed = 1;
 	  return (2);
 	}
       return (1);

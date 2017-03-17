@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar  3 14:45:34 2017 Antonin Rapini
-** Last update Thu Mar 16 17:52:49 2017 Antonin Rapini
+** Last update Fri Mar 17 01:46:28 2017 Antonin Rapini
 */
 
 #ifndef MY_INPUTS_H_
@@ -23,6 +23,7 @@ typedef struct	s_input
   char		*arg;
   char		*longarg;
   char		*input;
+  int		changed;
 }		t_input;
 
 #endif /* !MY_INPUTS_H_ */
