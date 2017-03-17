@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 19:02:17 2017 Antonin Rapini
-** Last update Thu Mar 16 18:30:51 2017 Antonin Rapini
+** Last update Fri Mar 17 01:42:02 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -22,7 +22,7 @@ int my_parse_option(int *i, int ac, char **av, t_game *game)
       if ((*i) + 1 < ac)
 	{
 	  (*i)++;
-	  return (my_setlevel(av[(*i) + 1], game));
+	  return (my_setlevel(av[(*i)], game));
 	}
       return (1);
     }

@@ -5,13 +5,12 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 19:02:17 2017 Antonin Rapini
-** Last update Thu Mar 16 18:35:25 2017 Antonin Rapini
+** Last update Fri Mar 17 01:41:44 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
 #include "my_game.h"
 #include "utils.h"
-#include <stdio.h>
 
 int	my_parse_longarg(int i, char **av, t_input *input)
 {
