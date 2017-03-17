@@ -5,14 +5,14 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Fri Mar 10 22:30:00 2017 Antonin Rapini
-** Last update Thu Mar 16 17:54:14 2017 Antonin Rapini
+** Last update Fri Mar 17 01:15:35 2017 Antonin Rapini
 */
 
 #include "utils.h"
 
-void my_print_help()
+void my_print_help(char *name)
 {
-  my_putstr("Usage: ./tetris [options]\n");
+  my_miniprintf("Usage: %s [options]\n", name);
   my_putstr("Options:\n");
   my_putstr("\t--help\t\t\tDisplay this help\n");
   my_putstr("\t-l --level={num}\tStart Tetris at level num (def: 1)\n");

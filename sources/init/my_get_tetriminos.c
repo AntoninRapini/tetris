@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sun Mar 12 20:45:32 2017 Antonin Rapini
-** Last update Sun Mar 12 21:41:20 2017 Antonin Rapini
+** Last update Fri Mar 17 01:37:47 2017 Antonin Rapini
 */
 
 #include <fcntl.h>
@@ -16,19 +16,22 @@
 #include "get_next_line.h"
 #include "my_tetriminos.h"
 
-#include <stdio.h>
 int	my_get_tetriminos_infos(char *buffer, t_tetriminos *ts)
 {
   char	**infos;
 
   if (buffer == NULL)
-    return (1);
+    {
+      ts->valid = 0;
+      return (1);
+    }
   if ((infos = my_str_to_wordtab(buffer)) == NULL || my_wordtablen(infos) != 3)
-  {
-    my_free_wordtab(infos);
-    free(buffer);
-    return (1);
-  }
+    {
+      my_free_wordtab(infos);
+      free(buffer);
+      ts->valid = 0;
+      return (1);
+    }
   ts->width = my_getnbr(infos[0]);
   ts->height = my_getnbr(infos[1]);
   ts->color = my_getnbr(infos[2]);
@@ -66,6 +69,7 @@ int	my_fill_tetriminos(int fd, t_tetriminos *ts)
       if (i >= ts->height || my_strlen(buffer) > ts->width)
 	{
 	  free(buffer);
+	  ts->valid = 0;
 	  return (1);
 	}
       ts->shape[i] = buffer;
@@ -74,20 +78,27 @@ int	my_fill_tetriminos(int fd, t_tetriminos *ts)
   return (0);
 }
 
-t_tetriminos	*my_get_tetriminos(char *file, int fd)
+t_tetriminos	*my_get_tetriminos(char *file, int fd, t_game *game)
 {
   t_tetriminos	*ts;
+  char		*name;
 
   ts = NULL;
+  if ((name = my_get_tetriminos_name(file)) == NULL)
+    return (NULL);
   if ((ts = my_init_tetriminos()) == NULL)
     return (ts);
-  if ((ts->name = my_get_tetriminos_name(file)) == NULL)
-    return (ts);
+  ts->name = name;
   if (my_get_tetriminos_infos(get_next_line(fd), ts))
     return (ts);
   if ((ts->shape = my_init_wordtab(ts->height)) == NULL)
-    return (ts);
+    {
+      ts->valid = 0;
+      return (ts);
+    }
   if (my_fill_tetriminos(fd, ts))
     return (ts);
+  if (my_check_tetriminos(ts, game))
+    ts->valid = 0;
   return (ts);
 }

@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Thu Mar  2 18:59:05 2017 Antonin Rapini
-** Last update Thu Mar 16 18:37:15 2017 Antonin Rapini
+** Last update Fri Mar 17 01:38:02 2017 Antonin Rapini
 */
 
 #include <dirent.h>
@@ -32,12 +32,12 @@ int		my_create_listelement
     return (0);
   if ((fd = open(fullpath, O_RDONLY)) == -1)
     return (0);
-  element->tetriminos = my_get_tetriminos(entry->d_name, fd);
+  if ((element->tetriminos =
+       my_get_tetriminos(entry->d_name, fd, game)) == NULL)
+    return (0);
   while ((buffer = get_next_line(fd)) != NULL)
     free(buffer);
   close(fd);
-  if (my_check_tetriminos(element->tetriminos, game))
-    return (0);
   game->tetriminoscount++;
   element->next = *tlist;
   *tlist = element;

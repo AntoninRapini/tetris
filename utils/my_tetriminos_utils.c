@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sun Mar 12 19:55:40 2017 Antonin Rapini
-** Last update Thu Mar 16 18:39:18 2017 Antonin Rapini
+** Last update Fri Mar 17 01:30:29 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -43,7 +43,6 @@ int	my_check_tetriminos(t_tetriminos *ts, t_game *game)
 	return (0);
       i++;
     }
-  my_free_tetriminos(ts);
   return (1);
 }
 

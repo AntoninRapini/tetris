@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Feb 22 14:38:43 2017 Antonin Rapini
-** Last update Sat Mar 11 18:57:23 2017 Antonin Rapini
+** Last update Fri Mar 17 01:29:41 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -15,9 +15,14 @@
 void my_show_tetriminos(t_tetriminos *tetrimino)
 {
   my_miniprintf("Tetriminos : Name %s : ", tetrimino->name);
-  my_miniprintf("Size %i*%i : Color %i :\n",
-		tetrimino->width, tetrimino->height, tetrimino->color);
-  my_show_wordtab(tetrimino->shape);
+  if (tetrimino->valid)
+    {
+      my_miniprintf("Size %i*%i : Color %i :\n",
+		    tetrimino->width, tetrimino->height, tetrimino->color);
+      my_show_wordtab(tetrimino->shape);
+    }
+  else
+    my_putstr("Error\n");
 }
 
 void my_show_tetriminoslist(t_tlist *tlist)
