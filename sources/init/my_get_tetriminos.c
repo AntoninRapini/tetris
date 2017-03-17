@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sun Mar 12 20:45:32 2017 Antonin Rapini
-** Last update Fri Mar 17 13:19:41 2017 Antonin Rapini
+** Last update Fri Mar 17 13:24:46 2017 Antonin Rapini
 */
 
 #include <fcntl.h>
@@ -65,6 +65,8 @@ int	my_checkwidth(char *bfr, int width)
   i = 0;
   while (bfr[i])
     {
+      if (bfr[i] != ' ' && bfr[i] != '*')
+	return (1);
       i++;
       if (i == width)
 	{
