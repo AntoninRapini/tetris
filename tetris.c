@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Thu Mar  2 18:33:06 2017 Antonin Rapini
-** Last update Sat Mar 18 00:32:18 2017 Antonin Rapini
+** Last update Sun Mar 19 20:57:00 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -35,7 +35,10 @@ int		main(int ac, char **av, char **env)
   if ((setupterm(term, 1, &ret)) != 0)
     return (84);
   if ((game = my_create_game(ac, av)) == NULL)
-    return (84);
+    {
+      my_print_error(av[0]);
+      return (84);
+    }
   if (game->debug)
     {
       my_print_debug(game);
