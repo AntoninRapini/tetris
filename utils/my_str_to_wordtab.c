@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Wed Oct 12 22:17:24 2016 Antonin Rapini
-** Last update Sun Mar 12 19:44:05 2017 Antonin Rapini
+** Last update Sun Mar 19 16:43:24 2017 Antonin Rapini
 */
 
 #include <stdlib.h>
@@ -66,6 +66,7 @@ void	populate_arr(char *str, char **arr)
 char	**my_str_to_wordtab(char *str)
 {
   char	**arr;
+
   arr = malloc((get_word_count(str) + 1) * sizeof(char *));
   populate_arr(str, arr);
   return (arr);

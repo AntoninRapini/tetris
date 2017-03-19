@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Sun Mar 12 20:45:32 2017 Antonin Rapini
-** Last update Sat Mar 18 00:53:40 2017 Antonin Rapini
+** Last update Sun Mar 19 16:41:28 2017 Antonin Rapini
 */
 
 #include <fcntl.h>
@@ -27,7 +27,8 @@ int	my_get_tetriminos_infos(char *buffer, t_tetriminos *ts)
       ts->valid = 0;
       return (1);
     }
-  if ((infos = my_str_to_wordtab(buffer)) == NULL || my_wordtablen(infos) != 3)
+  if ((infos = my_str_to_wordtab(buffer)) == NULL
+      || my_wordtablen(infos) != 3)
     {
       my_free_wordtab(infos);
       free(buffer);
