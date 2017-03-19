@@ -5,7 +5,7 @@
 ** Login   <antonin.rapini@epitech.net>
 ** 
 ** Started on  Thu Mar  2 17:18:06 2017 Antonin Rapini
-** Last update Sun Mar 19 20:57:51 2017 Antonin Rapini
+** Last update Sun Mar 19 21:01:30 2017 Antonin Rapini
 */
 
 #ifndef SOURCES_H_
@@ -27,6 +27,6 @@ int my_check_tetriminos(t_tetriminos *, t_game *);
 void my_free_tetriminos(t_tetriminos *);
 int my_parse_input(int *, int, char **, t_game *);
 int my_play(t_game *);
-void my_print_error(char *);
+int my_print_error(char *);
 
 #endif /* !SOURCES_H_ */
